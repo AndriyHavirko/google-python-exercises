@@ -1,2 +1,3 @@
-This is Google Python Class exercises
-https://developers.google.com/edu/python
+# Google's Python Class
+
+This repository contains some exercises from the [Google's Python Class!](https://developers.google.com/edu/python)
