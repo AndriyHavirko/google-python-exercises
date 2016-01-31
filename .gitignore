@@ -58,6 +58,3 @@ target/
 
 # Sublime Text files
 *.sublime-workspace
-
-*.html
-*.google.com
