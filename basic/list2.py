@@ -13,18 +13,33 @@
 # so [1, 2, 2, 3] returns [1, 2, 3]. You may create a new list or
 # modify the passed in list.
 def remove_adjacent(nums):
-  # +++your code here+++
-  return
-
+    result = []
+    if len(nums) > 0: result.append(nums[0])
+    for n in nums:
+        if result[-1] != n: result.append(n)
+    return result
 
 # E. Given two lists sorted in increasing order, create and return a merged
 # list of all the elements in sorted order. You may modify the passed in lists.
 # Ideally, the solution should work in "linear" time, making a single
 # pass of both lists.
 def linear_merge(list1, list2):
-  # +++your code here+++
-  return
+  result = []
+  
+  while len(list1) and len(list2):
+    if list1[-1] > list2[-1]:
+      result.append(list1.pop(-1))
+    else:
+      result.append(list2.pop(-1))
+  
+  list1.reverse()
+  list2.reverse()
+  result.extend(list1)
+  result.extend(list2)
 
+  result.reverse()
+  return result
+  
 # Note: the solution above is kind of cute, but unforunately list.pop(0)
 # is not constant time with the standard python list implementation, so
 # the above is not strictly linear time.
@@ -59,7 +74,11 @@ def main():
        ['aa', 'bb', 'cc', 'xx', 'zz'])
   test(linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb']),
        ['aa', 'aa', 'aa', 'bb', 'bb'])
-
-
+  test(linear_merge([1, 2, 3, 9, 10, 11, 12, 13, 14, 20], 
+       [4, 5, 6, 7, 8, 15]),
+       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20])
+  test(linear_merge([4, 5, 6, 7, 8, 15],
+       [1, 2, 3, 9, 10, 11, 12, 13, 14, 20]),
+       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20])
 if __name__ == '__main__':
   main()
