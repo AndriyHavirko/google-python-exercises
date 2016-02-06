@@ -1,9 +1,5 @@
 *.jpg filter=lfs diff=lfs merge=lfs -text
 
 # GitHub Linguist
-babynames/* linguist-vendored=false
-babynames/babynames.py linguist-vendored
-logpuzzle/* linguist-vendored=false
-logpuzzle/logpuzzle.py linguist-vendored
-
-*.com linguist-language=Python
+*.html linguist-vendored=false
+*.com linguist-vendored=false
