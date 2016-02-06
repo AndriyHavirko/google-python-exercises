@@ -2,6 +2,8 @@
 
 # GitHub Linguist
 babynames/* linguist-vendored=false
-babynames/babynames.py linguist-vendored=true
+babynames/babynames.py linguist-vendored
 logpuzzle/* linguist-vendored=false
-logpuzzle/logpuzzle.py linguist-vendored=true
+logpuzzle/logpuzzle.py linguist-vendored
+
+*.com linguist-language=Python
